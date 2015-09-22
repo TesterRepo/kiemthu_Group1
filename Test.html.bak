@@ -1,0 +1,50 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" href="http://code.jquery.com/qunit/qunit-1.19.0.css" />
+<script src="http://code.jquery.com/qunit/qunit-1.19.0.js"></script>
+<title>Giai phuong trinh bac 2</title>
+<script type="text/javascript">		</script>
+</head>
+
+<body>
+	 <div id="qunit"></div>
+	 <div id="qunit-fixture"></div>
+    <script type="text/javascript">
+    (function(){
+    // test unit
+		function giaiptb2(a, b, c){
+			var delta=((b*b)-(4*a*c));
+			var x1,x2;
+			if (delta==0)
+				{
+				 x1=(-b/2/a) ;
+				 x2=(-b/2/a) ;
+				}
+				else
+				{
+					if (delta>0)
+					{
+						x1 =  ((-b-Math.sqrt(delta))/2/a);
+						x2 =  ((-b+Math.sqrt(delta))/2/a);
+				 
+					 }
+					 else
+						 {
+							x1=x2=null;
+						 }
+				}
+			return x1, x2;
+		}
+	 
+		test('giaiptb2()', function() {
+			equal(giaiptb2(1, 2,-3), -3, 1, "Passed:  a=1, b=2, c= -3, x1 =-3,x2 =1");
+			equal(giaiptb2(1, null, null), -3, 1);
+			equal(giaiptb2(2, 2 ,2), -3, 1);
+			equal(giaiptb2(1, 2,1), -1, -1);
+		});
+})();
+ 
+    </script>
+</body>
+</html>
